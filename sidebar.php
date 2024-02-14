@@ -9,7 +9,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-chart-pie"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Finanzas</div>
+        <div class="sidebar-brand-text mx-3">VisualCom</div>
       </a>
 
       <!-- Divider -->
@@ -27,14 +27,14 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Transacción
+        PlAN DE CUENTAS
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="pendapatan.php">
           <i class="fas fa-fw fa-arrow-up"></i>
-          <span>Renta de I ngreso</span>
+          <span>INGRESOS</span>
         </a>
       </li>
 
@@ -42,7 +42,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="pengeluaran.php" >
           <i class="fas fa-fw fa-arrow-down"></i>
-          <span>Gasto</span>
+          <span>GASTOS</span>
         </a>
       </li>
 
@@ -51,7 +51,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Empleado
+        REGISTROS
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -81,7 +81,7 @@
       <li class="nav-item">
         <a class="nav-link" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Informe</span></a>
+          <span>INFORMES</span></a>
       </li>
 
       <!-- Divider -->

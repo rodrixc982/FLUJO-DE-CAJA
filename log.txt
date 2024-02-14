@@ -12,3 +12,13 @@
 
 [2024-12-02:19:13:46] Nama Admin : TIANZ => Edit Hutang => 20 => Sukses 
 
+[2024-13-02:20:05:41] Nama Admin : Manuel Reyna => Edit Pemasukan => 1 => Sukses Edit
+
+[2024-13-02:20:05:49] Nama Admin : Manuel Reyna => Edit Pemasukan => 3 => Sukses Edit
+
+[2024-13-02:21:07:00] Nama Admin : Manuel Reyna => Edit Pemasukan => 1 => Sukses Edit
+
+[2024-13-02:21:41:59] Nama Admin : Manuel Reyna => Edit Pemasukan => 48 => Sukses Edit
+
+[2024-13-02:21:56:23] Nama Admin : Manuel Reyna => Edit Pemasukan => 49 => Sukses Edit
+

@@ -115,24 +115,24 @@ while ($row = mysqli_fetch_array($query_edit)) {
 </div>
 
 <div class="form-group">
-<label>Nama</label>
+<label>Nombre</label>
 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">      
 </div>
 
 
 <div class="form-group">
-<label>Email</label>
+<label>Correo Electronico</label>
 <input type="text" name="email" class="form-control" value="<?php echo $row['email']; ?>">      
 </div>
 
 <div class="form-group">
-<label>Password</label>
+<label>Contraseña</label>
 <input type="text" name="pass" class="form-control" value="<?php echo $row['pass']; ?>">      
 </div>
 
 <div class="modal-footer">  
-<button type="submit" class="btn btn-success">Ubah</button>
-<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+<button type="submit" class="btn btn-success">Cambio</button>
+<button type="button" class="btn btn-default" data-dismiss="modal">Fuera</button>
 </div>
 <?php 
 }
@@ -156,7 +156,7 @@ while ($row = mysqli_fetch_array($query_edit)) {
       <div class="modal-content">
         <!-- heading modal -->
         <div class="modal-header">
-          <h4 class="modal-title">Tambah Admin</h4>
+          <h4 class="modal-title">Agregar administrador</h4>
 		    <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <!-- body modal -->
@@ -171,9 +171,9 @@ while ($row = mysqli_fetch_array($query_edit)) {
         </div>
         <!-- footer modal -->
         <div class="modal-footer">
-		<button type="submit" class="btn btn-success" >Tambah</button>
+		<button type="submit" class="btn btn-success" >Agregar</button>
 		</form>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fuera</button>
         </div>
       </div>
 

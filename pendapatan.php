@@ -44,7 +44,7 @@ require ('sidebar.php'); ?>
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Fuente de ingresos</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">FUENTE DE INGRESO DE CAJA</h6>
                 </div>
                 <div class="card-body">
 				<?php
@@ -67,31 +67,64 @@ require ('sidebar.php'); ?>
 				while ($jumlah1=mysqli_fetch_array($hasil1)){
 				$arrayhasil1[] = $jumlah1['jumlah'];
 				}
-				$jumlahhasil1 = array_sum($arrayhasil1);
+				if(isset($arrayhasil1) && is_array($arrayhasil1)) {
+    // Suma los elementos del array
+    $jumlahhasil1 = array_sum($arrayhasil1);
+} else {
+    // Maneja el caso en que $arrayhasil1 no esté definido o no sea un array
+    $jumlahhasil1 = 0; // o cualquier otro valor predeterminado que desees
+}
 				
 				$hasil2=mysqli_query($koneksi,"SELECT * FROM pemasukan where id_sumber = 2");
 				while ($jumlah2=mysqli_fetch_array($hasil2)){
 				$arrayhasil2[] = $jumlah2['jumlah'];
 				}
-				$jumlahhasil2 = array_sum($arrayhasil2);
+				// Asegúrate de que $arrayhasil2 esté definido y sea un array antes de usarlo
+if(isset($arrayhasil2) && is_array($arrayhasil2)) {
+    // Suma los elementos del array
+    $jumlahhasil2 = array_sum($arrayhasil2);
+} else {
+    // Maneja el caso en que $arrayhasil2 no esté definido o no sea un array
+    $jumlahhasil2 = 0; // O cualquier otro valor predeterminado que desees
+}
 				
 				$hasil3=mysqli_query($koneksi,"SELECT * FROM pemasukan where id_sumber = 3");
 				while ($jumlah3=mysqli_fetch_array($hasil3)){
 				$arrayhasil3[] = $jumlah3['jumlah'];
 				}
-				$jumlahhasil3 = array_sum($arrayhasil3);
+				// Asegúrate de que $arrayhasil3 esté definido y sea un array antes de usarlo
+if(isset($arrayhasil3) && is_array($arrayhasil3)) {
+    // Suma los elementos del array
+    $jumlahhasil3 = array_sum($arrayhasil3);
+} else {
+    // Maneja el caso en que $arrayhasil3 no esté definido o no sea un array
+    $jumlahhasil3 = 0; // o cualquier otro valor predeterminado que desees
+}
 				
 				$hasil4=mysqli_query($koneksi,"SELECT * FROM pemasukan where id_sumber = 4");
 				while ($jumlah4=mysqli_fetch_array($hasil4)){
 				$arrayhasil4[] = $jumlah4['jumlah'];
 				}
-				$jumlahhasil4 = array_sum($arrayhasil4);
+				if(isset($arrayhasil4) && is_array($arrayhasil4)) {
+    // Suma los elementos del array
+    $jumlahhasil4 = array_sum($arrayhasil4);
+} else {
+    // Maneja el caso en que $arrayhasil4 no esté definido o no sea un array
+    $jumlahhasil4 = 0; // o cualquier otro valor predeterminado que desees
+}
 				
 				$hasil5=mysqli_query($koneksi,"SELECT * FROM pemasukan where id_sumber = 5");
 				while ($jumlah5=mysqli_fetch_array($hasil5)){
 				$arrayhasil5[] = $jumlah5['jumlah'];
 				}
-				$jumlahhasil5 = array_sum($arrayhasil5);
+				// Asegúrate de que $arrayhasil5 esté definido y sea un array antes de usarlo
+if(isset($arrayhasil5) && is_array($arrayhasil5)) {
+    // Suma los elementos del array
+    $jumlahhasil5 = array_sum($arrayhasil5);
+} else {
+    // Maneja el caso en que $arrayhasil5 no esté definido o no sea un array
+    $jumlahhasil5 = 0; // o cualquier otro valor predeterminado que desees
+}
 				
 				$sumber1 = mysqli_query($koneksi,"SELECT id_sumber FROM pemasukan where id_sumber ='1'");
 				$sumber1text = mysqli_num_rows($sumber1);
@@ -122,25 +155,17 @@ require ('sidebar.php'); ?>
 				
 					$no=1;
 				echo '
-                  <h4 class="small font-weight-bold">'.$sumbern1['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil1,2,',','.').'</span></h4>
+                  <h4 class="small font-weight-bold">'.$sumbern1['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil1,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width:'.$sumber1.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber1text.' Kali</div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:'.$sumber1.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber1text.'  PRODUCTOS REGISTROS</div>
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern2['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil2,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern2['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil2,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width:'.$sumber2.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber2text.' Kali</div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:'.$sumber2.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber2text.' SERVICIOS REGISTRADOS</div>
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern3['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil3,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern4['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil4,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width:'.$sumber3.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber3text.' Kali</div>
-                  </div>
-				  <h4 class="small font-weight-bold">'.$sumbern4['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil4,2,',','.').'</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width:'.$sumber4.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber4text.' Kali</div>
-                  </div>
-				  <h4 class="small font-weight-bold">'.$sumbern5['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil5,2,',','.').'</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-success" role="progressbar" style="width:'.$sumber5.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber5text.' Kali</div>
+                    <div class="progress-bar bg-primary" role="progressbar" style="width:'.$sumber4.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber4text.' INGRESO NO OPERACIONALES </div>
                   </div>';
 				  ?>
                 </div>
@@ -185,11 +210,11 @@ require ('sidebar.php'); ?>
 			  
 			           <!-- DataTales Example -->
 					   <div class="col-xl-8 col-lg-7">
-					   <button type="button" class="btn btn-success" style="margin:5px" data-toggle="modal" data-target="#myModalTambah"><i class="fa fa-plus"> Inclusión</i></button><br>
+					   <button type="button" class="btn btn-success" style="margin:5px" data-toggle="modal" data-target="#myModalTambah"><i class="fa fa-plus"> Añadir</i></button><br>
 
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Transacciones entrantes</h6>
+              <h6 class="m-0 font-weight-bold text-primary">CAJA ENTRANTE DE DINERO</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -198,7 +223,7 @@ require ('sidebar.php'); ?>
                     <tr>
                       <th>ID de ingresos</th>
                       <th>Fecha</th>
-                      <th>Suma</th>
+                      <th>Dinero</th>
                       <th>Fuente</th>
 					  <th>Acción</th>
                     </tr>
@@ -303,8 +328,8 @@ echo '<option value="'.$no++.'">'.$noo++.'.'.$querynama["nama"].'</option>';
 </div>
 
 <div class="modal-footer">  
-<button type="submit" class="btn btn-success">Cambio</button>
-<a href="hapus-pemasukan.php?id_pemasukan=<?=$row['id_pemasukan'];?>" Onclick="confirm('Anda Yakin Ingin Menghapus?')" class="btn btn-danger">Enjugar</a>
+<button type="submit" class="btn btn-success">Guardar</button>
+<a href="hapus-pemasukan.php?id_pemasukan=<?=$row['id_pemasukan'];?>" Onclick="confirm('Anda Yakin Ingin Menghapus?')" class="btn btn-danger">Eliminar</a>
 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 </div>
 <?php 
@@ -341,11 +366,9 @@ echo '<option value="'.$no++.'">'.$noo++.'.'.$querynama["nama"].'</option>';
          <input type="number" class="form-control" name="jumlah">
 		Fuente : 
          <select class="form-control" name="sumber">
-		 <option value="1" >1. Crear una web gubernamental</option>
-		 <option value="2" >2. Diseño de Carteles de Concursos</option>
-		 <option value="3" >3. Instalación de software</option>
-		 <option value="4" >4. Instalación del sistema operativo</option>
-		 <option value="5" >5. Crear videos animados</option>
+		 <option value="1" >1. INGRESO CON PRODUCTOS</option>
+		 <option value="2" >2. INGRESO CON SERVICIOS</option>
+		 <option value="3" >3. INGRESO NO OPERACIONALES</option>
 		 </select>
         </div>
         <!-- footer modal -->

@@ -42,7 +42,14 @@ $pemasukan = mysqli_query($koneksi, "SELECT * FROM pemasukan");
 while ($masuk = mysqli_fetch_array($pemasukan)) {
     $arraymasuk[] = $masuk['jumlah'];
 }
-$jumlahmasuk = array_sum($arraymasuk);
+// Asegúrate de que $arraymasuk esté definido y sea un array antes de usarlo
+if(isset($arraymasuk) && is_array($arraymasuk)) {
+    // Suma los elementos del array
+    $jumlahmasuk = array_sum($arraymasuk);
+} else {
+    // Maneja el caso en que $arraymasuk no esté definido o no sea un array
+    $jumlahmasuk = 0; // o cualquier otro valor predeterminado que desees
+}
 
 $pengeluaran = mysqli_query($koneksi, "SELECT * FROM pengeluaran");
 while ($keluar = mysqli_fetch_array($pengeluaran)) {
@@ -130,7 +137,7 @@ $tujuhhari = mysqli_fetch_array($tujuhhari);
                             </div>
                         </div>
                     </div>
-                    &nbsp Descargas : S/.
+                    &nbsp CANTIDAD DE INGRESO : S/.
                     <?php
                     echo number_format($jumlahmasuk, 2, ',', '.');
                     ?>
@@ -158,7 +165,7 @@ $tujuhhari = mysqli_fetch_array($tujuhhari);
                             </div>
                         </div>
                     </div>
-                    &nbsp Descargas : S/.
+                    &nbsp CANTIDAD DE GASTO : S/.
                     <?php
                     echo number_format($jumlahkeluar, 2, ',', '.');
                     ?>

@@ -50,12 +50,13 @@ require 'cek-sesi.php';
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nombre</th>
-                      <th>Posición</th>
-                      <th>Dirección</th>
-                      <th>Edad</th>
-                      <th>Contacto</th>
-                      <th>AkAcciónsi</th>
+                      <th>CLASIFICACION</th>
+                      <th>PLAN DE CUENTAS</th>
+                      <th>ARTICULOS</th>
+                      <th>VALOR</th>
+                      <th>FECHA DE PAGOS</th>
+					  <th>ACUMULADO</th>
+                      <th>EDITAR</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -93,7 +94,7 @@ while ($data = mysqli_fetch_assoc($query))
 <!-- Modal content-->
 <div class="modal-content">
 <div class="modal-header">
-<h4 class="modal-title">Ubah Data Karyawan</h4>
+<h4 class="modal-title">Cambiar los datos de los empleados</h4>
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 <div class="modal-body">
@@ -110,34 +111,34 @@ while ($row = mysqli_fetch_array($query_edit)) {
 <input type="hidden" name="id_karyawan" value="<?php echo $row['id_karyawan']; ?>">
 
 <div class="form-group">
-<label>Nama</label>
+<label>Nombre</label>
 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">      
 </div>
 
 <div class="form-group">
-<label>Posisi</label>
+<label>Posición</label>
 <input type="text" name="posisi" class="form-control" value="<?php echo $row['posisi']; ?>">      
 </div>
 
 <div class="form-group">
-<label>Alamat</label>
+<label>Dirección</label>
 <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>">      
 </div>
 
 <div class="form-group">
-<label>Umur</label>
+<label>Edad</label>
 <input type="text" name="umur" class="form-control" value="<?php echo $row['umur']; ?>">      
 </div>
 
 <div class="form-group">
-<label>Kontak</label>
+<label>Contacto</label>
 <input type="text" name="kontak" class="form-control" value="<?php echo $row['kontak']; ?>">      
 </div>
 
 <div class="modal-footer">  
-<button type="submit" class="btn btn-success">Ubah</button>
-<a href="hapus-karyawan.php?id_karyawan=<?=$row['id_karyawan'];?>" Onclick="confirm('Anda Yakin Ingin Menghapus?')" class="btn btn-danger">Hapus</a>
-<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+<button type="submit" class="btn btn-success">Cambio</button>
+<a href="hapus-karyawan.php?id_karyawan=<?=$row['id_karyawan'];?>" Onclick="confirm('Anda Yakin Ingin Menghapus?')" class="btn btn-danger">Enjugar</a>
+<button type="button" class="btn btn-default" data-dismiss="modal">Fuera</button>
 </div>
 <?php 
 }
@@ -161,28 +162,28 @@ while ($row = mysqli_fetch_array($query_edit)) {
       <div class="modal-content">
         <!-- heading modal -->
         <div class="modal-header">
-          <h4 class="modal-title">Tambah Karyawan</h4>
+          <h4 class="modal-title">Agregar empleados</h4>
 		    <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <!-- body modal -->
 		<form action="tambah-karyawan.php" method="get">
         <div class="modal-body">
-		Nama : 
+		Nombre : 
          <input type="text" class="form-control" name="nama">
-		Posisi : 
+		Posicion : 
          <input type="text" class="form-control" name="posisi">
-		Alamat : 
+		Dirección : 
          <input type="text" class="form-control" name="alamat">
-		Umur : 
+		Edad : 
          <input type="number" class="form-control" name="umur">
-		Kontak : 
+		Contacto: 
          <input type="text" class="form-control" name="kontak">
         </div>
         <!-- footer modal -->
         <div class="modal-footer">
-		<button type="submit" class="btn btn-success" >Tambah</button>
+		<button type="submit" class="btn btn-success" >Agregar</button>
 		</form>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fuera</button>
         </div>
       </div>
 

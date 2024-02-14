@@ -41,7 +41,7 @@ require 'sidebar.php'; ?>
                    <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de empleados</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Lista de Caja</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -79,7 +79,7 @@ $query2 = mysqli_num_rows($query2);
 $no = 1;
 ?>
                     <tr>
-                      <td>Inclusión</td>
+                      <td>INGRESO DE CAJA</td>
                       <td><?=$query1?></td>
                       <td>S/. <?=number_format($jumlahmasuk,2,',','.');?></td>
 					  <td>
@@ -89,7 +89,7 @@ $no = 1;
 </tr>
 
                     <tr>
-                      <td>Gasto</td>
+                      <td>GASTO DE CAJA</td>
                       <td><?=$query2?></td>
                       <td>S/. <?=number_format($jumlahkeluar,2,',','.');?></td>
 					  <td>

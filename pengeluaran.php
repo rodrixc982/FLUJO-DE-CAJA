@@ -101,31 +101,62 @@ $tujuhhari= mysqli_fetch_array($tujuhhari);
 				while ($jumlah1=mysqli_fetch_array($hasil1)){
 				$arrayhasil1[] = $jumlah1['jumlah'];
 				}
-				$jumlahhasil1 = array_sum($arrayhasil1);
+				$arrayhasil1 = []; // Inicializa $arrayhasil1 como un array vacío
+
+                $hasil1 = mysqli_query($koneksi, "SELECT * FROM pengeluaran WHERE id_sumber = 6");
+                while ($jumlah1 = mysqli_fetch_array($hasil1)) {
+                $arrayhasil1[] = $jumlah1['jumlah'];
+                }
+
+$jumlahhasil1 = array_sum($arrayhasil1);
 				
 				$hasil2=mysqli_query($koneksi,"SELECT * FROM pengeluaran where id_sumber = 7");
 				while ($jumlah2=mysqli_fetch_array($hasil2)){
 				$arrayhasil2[] = $jumlah2['jumlah'];
 				}
-				$jumlahhasil2 = array_sum($arrayhasil2);
+				$arrayhasil2 = []; // Inicializa $arrayhasil2 como un array vacío
+
+                $hasil2 = mysqli_query($koneksi,"SELECT jumlah FROM pengeluaran where id_sumber = 7");
+                while ($jumlah2 = mysqli_fetch_array($hasil2)){
+                $arrayhasil2[] = $jumlah2['jumlah'];
+                }
+                $jumlahhasil2 = array_sum($arrayhasil2);
+
 				
 				$hasil3=mysqli_query($koneksi,"SELECT * FROM pengeluaran where id_sumber = 8");
 				while ($jumlah3=mysqli_fetch_array($hasil3)){
 				$arrayhasil3[] = $jumlah3['jumlah'];
 				}
-				$jumlahhasil3 = array_sum($arrayhasil3);
+				$arrayhasil3 = []; // Inicializa $arrayhasil3 como un array vacío
+
+                $hasil3 = mysqli_query($koneksi,"SELECT jumlah FROM pengeluaran where id_sumber = 8");
+                while ($jumlah3 = mysqli_fetch_array($hasil3)){
+                $arrayhasil3[] = $jumlah3['jumlah'];
+                }
+                $jumlahhasil3 = array_sum($arrayhasil3);
 				
 				$hasil4=mysqli_query($koneksi,"SELECT * FROM pengeluaran where id_sumber = 9");
 				while ($jumlah4=mysqli_fetch_array($hasil4)){
 				$arrayhasil4[] = $jumlah4['jumlah'];
 				}
-				$jumlahhasil4 = array_sum($arrayhasil4);
+				$arrayhasil4 = []; // Inicializa $arrayhasil4 como un array vacío
+
+                $hasil4 = mysqli_query($koneksi,"SELECT jumlah FROM pengeluaran where id_sumber = 9");
+                while ($jumlah4 = mysqli_fetch_array($hasil4)){
+                $arrayhasil4[] = $jumlah4['jumlah'];
+                }
+                $jumlahhasil4 = array_sum($arrayhasil4);
 				
 				$hasil5=mysqli_query($koneksi,"SELECT * FROM pengeluaran where id_sumber = 10");
 				while ($jumlah5=mysqli_fetch_array($hasil5)){
 				$arrayhasil5[] = $jumlah5['jumlah'];
 				}
-				$jumlahhasil5 = array_sum($arrayhasil5);
+				$hasil5=mysqli_query($koneksi,"SELECT jumlah FROM pengeluaran where id_sumber = 10");
+                $arrayhasil5 = []; // Initialize the array
+                while ($jumlah5=mysqli_fetch_array($hasil5)){
+                $arrayhasil5[] = $jumlah5['jumlah'];
+                }
+                $jumlahhasil5 = array_sum($arrayhasil5);
 				
 				$sumber1 = mysqli_query($koneksi,"SELECT id_sumber FROM pengeluaran where id_sumber ='6'");
 				$sumber1text = mysqli_num_rows($sumber1);
@@ -156,25 +187,26 @@ $tujuhhari= mysqli_fetch_array($tujuhhari);
 				
 					$no=1;
 				echo '
-                  <h4 class="small font-weight-bold">'.$sumbern1['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil1,2,',','.').'</span></h4>
+                  <h4 class="small font-weight-bold">'.$sumbern1['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil1,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width:'.$sumber1.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber1text.' Kali</div>
+                   <div class="progress-bar bg-danger" role="progressbar" style="width:<?php echo $sumber1; ?>%; color: black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $sumber1text; ?> GASTOS CON PRODUCTOSKali</div>
+
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern2['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil2,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern2['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil2,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width:'.$sumber2.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber2text.' Kali</div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:'.$sumber2.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber2text.' GASTOS CON SERVICIO</div>
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern3['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil3,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern3['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil3,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width:'.$sumber3.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber3text.' Kali</div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width:'.$sumber3.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber3text.' GASTO NO OPERACIONALESKali</div>
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern4['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil4,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern4['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil4,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width:'.$sumber4.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber4text.' Kali</div>
+                    <div class="progress-bar bg-primary" role="progressbar" style="width:'.$sumber4.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber4text.' GASTO CON RH</div>
                   </div>
-				  <h4 class="small font-weight-bold">'.$sumbern5['nama'].'<span class="float-right">Rp. '.number_format($jumlahhasil5,2,',','.').'</span></h4>
+				  <h4 class="small font-weight-bold">'.$sumbern5['nama'].'<span class="float-right">S/. '.number_format($jumlahhasil5,2,',','.').'</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-success" role="progressbar" style="width:'.$sumber5.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber5text.' Kali</div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width:'.$sumber5.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">'.$sumber5text.' GASTO OPERACIONALES</div>
                   </div>';
 				  ?>
                 </div>
@@ -236,7 +268,7 @@ $tujuhhari= mysqli_fetch_array($tujuhhari);
 			  </div>
 			  
 			  
-			<button type="button" class="btn btn-success" style="margin:5px" data-toggle="modal" data-target="#myModalTambah"><i class="fa fa-plus"> Éxodo</i></button><br>
+			<button type="button" class="btn btn-success" style="margin:5px" data-toggle="modal" data-target="#myModalTambah"><i class="fa fa-plus"> AÑADIR</i></button><br>
            <!-- DataTales Example -->
 	<div class="row">
 		<div class="col-xl-8 col-lg-7">
